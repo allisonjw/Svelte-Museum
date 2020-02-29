@@ -1,0 +1,1 @@
+<div>Artwork component</div>
