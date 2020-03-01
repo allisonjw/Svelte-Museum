@@ -1,6 +1,6 @@
 <script>
 	import SearchBar from './SearchBar.svelte';
-  import Artwork from './Artwork.svelte';
+  import Photographs from './Photographs.svelte';
   import { onMount } from 'svelte';	
 
     let searchQuery = '';
@@ -9,7 +9,7 @@
     let searchResults = [];
     let nextPage = 1;
     let isLoading = false;
-    let artworks = [];
+    let photographs = [];
 
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -24,7 +24,7 @@
     onMount(async() => {
       const res = await fetch(endpoint);
       let result = await res.json()
-      artworks = result.records
+      photographs = result.records
     });
 
 </script>
@@ -55,8 +55,8 @@
 	<h1>Gallery</h1>
 	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
   <section>
-  {#each artworks as artwork (artwork.id)}
-    <Artwork artwork={artwork} />
+  {#each photographs as photograph (photograph.id)}
+    <Photographs photograph={photograph} />
   {/each}
   </section>
 </main>
