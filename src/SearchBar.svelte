@@ -5,9 +5,12 @@
 </script>
 
 <style>
-  .search-input {
+  .search_form {
+      
+  }
+  .search_input {
     width: 100%;
-    max-width: 800px;
+    max-width: 60%;
     border-radius: 4px;
     border: 1px solid #ccc;
     padding: 10px 20px;
@@ -32,8 +35,8 @@
 </style>
 
 <div class="search">
-  <form class="search-form">
-    <input bind:value={search} class="search-input" type="search"
+  <form class="search_form">
+    <input bind:value={search} class="search_input" type="search"
     placeholder="Search Artwork by Name" />
     <button class="search_btn" on:submit|preventDefault={handleSubmit}>Search</button>
   </form>

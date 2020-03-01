@@ -1,14 +1,41 @@
 <script>
 	import SearchBar from './SearchBar.svelte';
-	import Artwork from './Artwork.svelte';
+  import Artwork from './Artwork.svelte';
+  import { onMount } from 'svelte';	
+
+    let searchQuery = '';
+    let searchTerm = null;
+    let totalPages = null;
+    let searchResults = [];
+    let nextPage = 1;
+    let isLoading = false;
+    let artwork = [];
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      searchResults = [];
+    }
+  
+  // http://api.harvardartmuseums.org/object?classification=Photographs&apikey=fb6b7390-5a53-11ea-b877-8f943796feb8&size=100
+    const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
+    const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
+    const endpoint = `${baseUrl}Photographs&Century=19%21&${apiKey}&size=30`;
+
+    onMount(async() => {
+      const res = await fetch(endpoint);
+      let result = await res.json()
+      artwork = result.records
+    });
+    $: console.log('artwork', artwork)
+
 </script>
+
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+    margin: auto;
+    overflow: hidden;
+    padding: 1em;
 	}
 
 	h1 {
@@ -17,17 +44,11 @@
 		font-size: 4em;
 		font-weight: 100;
 	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
 
 <main>
 	<h1>Gallery</h1>
-	<SearchBar />
-	<Artwork />
+	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
+	<Artwork {...artwork}/>
 
 </main>
