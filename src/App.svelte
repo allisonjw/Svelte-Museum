@@ -43,15 +43,21 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
+  }
+  section {
+    list-style: none;
+    display: grid;
+    gap: 40px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 </style>
 
 <main>
 	<h1>Gallery</h1>
 	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
+  <section>
   {#each artworks as artwork (artwork.id)}
     <Artwork artwork={artwork} />
   {/each}
-	<!-- <Artwork {...artwork}/> -->
-
+  </section>
 </main>
