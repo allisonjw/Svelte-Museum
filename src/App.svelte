@@ -9,7 +9,7 @@
     let searchResults = [];
     let nextPage = 1;
     let isLoading = false;
-    let artwork = [];
+    let artworks = [];
 
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -24,9 +24,9 @@
     onMount(async() => {
       const res = await fetch(endpoint);
       let result = await res.json()
-      artwork = result.records
+      artworks = result.records
     });
-    $: console.log('artwork', artwork)
+    $: console.log('artwork', artworks)
 
 </script>
 
@@ -49,6 +49,9 @@
 <main>
 	<h1>Gallery</h1>
 	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
-	<Artwork {...artwork}/>
+  {#each artworks as artwork (artwork.id)}
+    <Artwork artwork={artwork} />
+  {/each}
+	<!-- <Artwork {...artwork}/> -->
 
 </main>
