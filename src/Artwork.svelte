@@ -6,6 +6,7 @@ export let artwork
     .art_piece {
         animation: show 0.5s forwards ease-in-out;
         background-color: #00ffa6;
+        padding: .7em;
     }
 
     @keyframes show {
@@ -27,7 +28,13 @@ export let artwork
         margin-bottom: 10px;
     }
     .url_link {
-        overflow: hidden;
+        overflow: scroll;
+        color: blue;
+    }
+
+    .url_link:hover {
+        text-decoration: underline;
+        color: cornflowerblue;
     }
 </style>
 
@@ -37,7 +44,7 @@ export let artwork
   <h3>Dated: {artwork.dated}</h3>
   <h3>Culture: {artwork.culture}</h3>
   <!-- <h3>{artwork.title}</h3> -->
-  <h3 class="url_link">Link: {artwork.url}</h3>
+  <h3 class="url_link">{artwork.url}</h3>
   <img class="artwork" src={''} alt={artwork.commentary || ""}>
   
 </article>
