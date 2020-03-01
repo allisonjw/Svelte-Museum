@@ -19,14 +19,13 @@
   // http://api.harvardartmuseums.org/object?classification=Photographs&apikey=fb6b7390-5a53-11ea-b877-8f943796feb8&size=100
     const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
     const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
-    const endpoint = `${baseUrl}Photographs&Century=19%21&${apiKey}&size=30`;
+    const endpoint = `${baseUrl}Photographs&${apiKey}&size=30`;
 
     onMount(async() => {
       const res = await fetch(endpoint);
       let result = await res.json()
       artworks = result.records
     });
-    $: console.log('artwork', artworks)
 
 </script>
 

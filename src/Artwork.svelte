@@ -1,5 +1,12 @@
 <script>
 export let artwork
+$: console.log('artwork', artwork)
+
+
+const getImage = () => {
+    return artwork.images.find(image => image.baseimageurl)
+}
+ $:console.log('imgarray', getImage())
 </script>
 
 <style>
@@ -43,8 +50,8 @@ export let artwork
   <h3>Title: {artwork.title}</h3>
   <h3>Dated: {artwork.dated}</h3>
   <h3>Culture: {artwork.culture}</h3>
-  <!-- <h3>{artwork.title}</h3> -->
+  <h3>Division: {artwork.division}</h3>
   <h3 class="url_link">{artwork.url}</h3>
-  <img class="artwork" src={''} alt={artwork.commentary || ""}>
+  <img class="artwork" src={artwork.primaryimageurl} alt={artwork.commentary || ""}>
   
 </article>
