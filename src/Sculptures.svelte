@@ -6,4 +6,4 @@
 
 </style>
 
-<h2>Jewelry</h2>
+<h2>Sculptures</h2>
