@@ -1,16 +1,15 @@
 <script>
   import { onMount } from 'svelte';	
-  import Photographs from './Photographs';
-  import Paintings from './Paintings';
-  import Sculptures from './Sculptures';
-  import Jewelry from './Jewelry';
+  import Photographs from './Photographs.svelte';
+  import Paintings from './Paintings.svelte';
+  import Sculptures from './Sculptures.svelte';
+  import Jewelry from './Jewelry.svelte';
 
 let photographs = [];
 let paintings = [];
 let sculptures = [];
 let jewelry = [];
 
-// http://api.harvardartmuseums.org/object?classification=Photographs&apikey=fb6b7390-5a53-11ea-b877-8f943796feb8&size=100
 const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
 const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
 const photoEndpoint = `${baseUrl}Photographs&Century=21st&${apiKey}&size=16`;
@@ -31,6 +30,19 @@ onMount(async() => {
 });
 $: console.log('paintings', paintings)
 
+onMount(async() => {
+    const res = await fetch(sculptureEndpoint);
+    let result = await res.json()
+    sculptures = result.records
+});
+$: console.log('sculptures', sculptures)
+
+onMount(async() => {
+    const res = await fetch(jewelryEndpoint);
+    let result = await res.json()
+    jewelry = result.records
+});
+$: console.log('jewelry', jewelry)
 
 </script>
 
@@ -41,8 +53,6 @@ $: console.log('paintings', paintings)
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-
-
 </style>
 
 <h3>Navbar</h3>
