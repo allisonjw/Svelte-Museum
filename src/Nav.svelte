@@ -50,9 +50,15 @@ section {
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-   ul.menu li{
+  li {
     display : inline;
-    font-size: 1.2em;
+    font-size: 1.7em;
+    font-weight: 700;
+  }
+
+  a {
+    color: #08ce88;
+    text-shadow: 2px 3px 2px #101010d1;
   }
   div {
       display: flex;
@@ -63,7 +69,7 @@ section {
 </style>
 
 <div>
-    <ul class="menu">
+    <ul>
         <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photographs</a></li> |
         <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
         <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |

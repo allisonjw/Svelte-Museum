@@ -23,10 +23,12 @@
 	}
 
 	h1 {
-		color: #00ffa6;
+		color: #109e6c;
 		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 200;
+		font-size: 6em;
+    text-align: center;
+    text-shadow: 5px 7px 7px #272727;
+    margin: 3%;
   }
 </style>
 
