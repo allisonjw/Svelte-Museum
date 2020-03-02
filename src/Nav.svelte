@@ -9,6 +9,7 @@ let photographs = [];
 let paintings = [];
 let sculptures = [];
 let jewelry = [];
+export let menu = 1;
 
 const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
 const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
@@ -44,6 +45,7 @@ onMount(async() => {
 });
 $: console.log('jewelry', jewelry)
 
+
 </script>
 
 <style>
@@ -53,26 +55,38 @@ $: console.log('jewelry', jewelry)
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+  ul#menu li{
+    display : inline;
+  }
 </style>
 
-<h3>Navbar</h3>
+<ul id="menu">
+	<li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photgraphs</a></li> |
+	<li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
+    <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |
+	<li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li>
+</ul>
 <section>
+{#if menu === 1}
   {#each photographs as photograph (photograph.id)}
     <Photographs photograph={photograph} />
   {/each}
-</section>
-<!-- <section>
+{:else if menu === 2}
   {#each paintings as painting (painting.id)}
     <Paintings painting={painting} />
   {/each}
-</section> -->
-<!-- <section>
+{:else if menu === 3}
   {#each sculptures as sculpture (sculpture.id)}
     <Sculptures sculpture={sculpture} />
   {/each}
-</section> -->
-<!-- <section>
+{:else if menu === 4}
   {#each jewelry as jewelry (jewelry.id)}
     <Jewelry jewelry={jewelry} />
   {/each}
-</section> -->
+{:else}  
+<h1>
+	Page Not Found
+</h1>
+{/if}
+</section>
+<h3>Navbar</h3>
