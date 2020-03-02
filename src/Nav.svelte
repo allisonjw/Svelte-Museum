@@ -55,17 +55,27 @@ $: console.log('jewelry', jewelry)
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-  ul#menu li{
+  ul.menu li{
     display : inline;
+    font-size: 1.2em;
+  }
+  div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
   }
 </style>
 
-<ul id="menu">
-	<li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photgraphs</a></li> |
-	<li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
-    <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |
-	<li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li>
-</ul>
+<div>
+    <ul class="menu">
+        <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photgraphs</a></li> |
+        <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
+        <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |
+        <li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li>
+    </ul>
+</div>
+
 <section>
 {#if menu === 1}
   {#each photographs as photograph (photograph.id)}
