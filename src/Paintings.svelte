@@ -6,4 +6,4 @@
 
 </style>
 
-<h2>Jewelry</h2>
+<h2>Paintings</h2>
