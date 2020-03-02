@@ -14,10 +14,14 @@ body {
 
 .art_piece {
 	animation: show 0.5s forwards ease-in-out;
-	background-color: #00ffa6;
+	/* background-color: #00ffa6; */
 	padding: .7em;
 	box-shadow: 8px 11px 13px black;
-    border-radius: 9px;
+	border-radius: 9px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @keyframes show {
@@ -54,6 +58,8 @@ a {
 
 a:hover {
 	text-decoration: underline;
+	transform: scale(1.1);
+	transition: all .1s ease-in-out;
 }
 
 a:visited {
