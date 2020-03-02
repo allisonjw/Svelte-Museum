@@ -1,5 +1,5 @@
 <script>
-
+export let sculpture;
 </script>
 
 <style>
