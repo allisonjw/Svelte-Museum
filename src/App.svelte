@@ -26,12 +26,12 @@
 		color: #00ffa6;
 		text-transform: uppercase;
 		font-size: 4em;
-		font-weight: 100;
+		font-weight: 200;
   }
 </style>
 
 <main>
-	<h1>Gallery</h1>
+	<h1>Svelte Gallery</h1>
 	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
   <Nav />
 </main>

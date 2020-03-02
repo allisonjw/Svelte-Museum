@@ -15,9 +15,7 @@
     border: 1px solid #ccc;
     padding: 10px 20px;
     font-size: 1.7em;
-    margin-bottom: 50px;
   }
-
   .search_btn {
     background: grey;
     color: #333;
@@ -26,12 +24,10 @@
     cursor: pointer;
     outline: none;
   }
-
   .search_btn:hover {
     opacity: 0.8;
     transition: opacity 0.2s ease-in;
   }
-
 </style>
 
 <div class="search">

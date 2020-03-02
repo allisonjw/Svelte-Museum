@@ -16,6 +16,8 @@ body {
 	animation: show 0.5s forwards ease-in-out;
 	background-color: #00ffa6;
 	padding: .7em;
+	box-shadow: 8px 11px 13px black;
+    border-radius: 9px;
 }
 
 @keyframes show {
