@@ -52,11 +52,10 @@ section {
   }
   li {
     display : inline;
-    font-size: 1.7em;
+    font-size: 1.9em;
     font-weight: 700;
   }
-
-  a {
+    a {
     color: #08ce88;
     text-shadow: 2px 3px 2px #101010d1;
   }

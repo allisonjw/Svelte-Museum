@@ -5,9 +5,9 @@
 </script>
 
 <style>
-  .search_form {
+  /* .search_form {
       
-  }
+  } */
   .search_input {
     width: 100%;
     max-width: 60%;
@@ -27,6 +27,8 @@
   .search_btn:hover {
     opacity: 0.8;
     transition: opacity 0.2s ease-in;
+    transform: scale(1.1);
+    transition: all .1s ease-in-out;
   }
 </style>
 
