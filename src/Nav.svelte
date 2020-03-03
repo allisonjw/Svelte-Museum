@@ -45,6 +45,7 @@ onMount(async() => {
 });
 
 let searchQuery = '';
+let searchResults = []
 
     // $: filteredArtwork = seachQuery
 		// ? artwork.filter(art => {
@@ -52,14 +53,15 @@ let searchQuery = '';
 		// 	return title.toLowerCase().startsWith(seachQuery.toLowerCase());
 		// })
     // : artwork;
-    
-    const displayArtsSearch = (searchQuery) => {
-      return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
-    }
 
-    const handleSubmit = (e) => {
+    // const displayArtsSearch = (searchQuery) => {
+    //   return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
+    // }
+
+    const handleSubmit = (e, seachQuery) => {
       e.preventDefault()
-      displayArtsSearch()
+      return photographs.find((artwork) => artwork.title.toLowerCase().includes(searchQuery));
+
     }
 </script>
 
