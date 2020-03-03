@@ -1,18 +1,24 @@
 <script>
-	import SearchBar from './SearchBar.svelte';
+	// import SearchBar from './SearchBar.svelte';
   import Nav from './Nav.svelte';
 
-    let searchQuery = '';
-    let searchTerm = null;
-    let totalPages = null;
-    let searchResults = [];
-    let nextPage = 1;
-    let isLoading = false;
+    // let searchQuery = '';
 
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      searchResults = [];
-    }
+    // // $: filteredArtwork = seachQuery
+		// // ? artwork.filter(art => {
+		// // 	const title = `${art.title}`;
+		// // 	return title.toLowerCase().startsWith(seachQuery.toLowerCase());
+		// // })
+    // // : artwork;
+    
+    // const displayArtsSearch = (searchQuery) => {
+    //   return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
+    // }
+
+    // const handleSubmit = (e) => {
+    //   e.preventDefault()
+    //   displayArtsSearch()
+    // }
 </script>
 
 <style>
@@ -30,6 +36,6 @@
 
 <main>
 	  <h1>Svelte Gallery</h1>
-	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
+	  <!-- <SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/> -->
     <Nav />
 </main>

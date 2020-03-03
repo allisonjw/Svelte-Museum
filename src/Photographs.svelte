@@ -11,6 +11,7 @@ export let photograph
 <article class="art_piece">
   <div>
     <h3>Title: {photograph.title}</h3>
+    <h3>Artist/Name: {photograph.people[0].displayname}</h3>
     <h3>Dated: {photograph.dated}</h3>
     <h3>Division: {photograph.division}</h3>
     <h3 class="url_link">{photograph.url}</h3>
