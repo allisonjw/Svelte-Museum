@@ -24,7 +24,7 @@ const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=16&page=
 const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=16&page=9`;
 const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=16&page=4&sort=&sortorder=ASC`;
 const drawingEndpoint = `${baseUrl}Drawings&${apiKey}&size=16&page=1`;
-const coinEndpoint = `${baseUrl}Coins&${apiKey}&size=16&page=1`;
+const coinEndpoint = `${baseUrl}Coins&${apiKey}&size=16&page=2`;
 
 
 onMount(async() => {
@@ -56,14 +56,12 @@ onMount(async() => {
     let result = await res.json()
     drawings = result.records
 });
-$: console.log('drawings', drawings)
 
 onMount(async() => {
     const res = await fetch(coinEndpoint);
     let result = await res.json()
     coins = result.records
 });
-$: console.log('coins', coins)
 
 let searchQuery = '';
 let searchResults = []
@@ -121,7 +119,6 @@ section {
         <li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li> |
         <li><a href="/" on:click|preventDefault={() => (menu = 5)}>Drawings</a></li> |
         <li><a href="/" on:click|preventDefault={() => (menu = 6)}>Coins</a></li> 
-
     </ul>
 </div>
 
