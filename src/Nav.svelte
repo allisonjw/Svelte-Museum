@@ -4,6 +4,7 @@
   import Paintings from './Paintings.svelte';
   import Sculptures from './Sculptures.svelte';
   import Jewelry from './Jewelry.svelte';
+  import { fly } from 'svelte/transition';
 
 let photographs = [];
 let paintings = [];
@@ -50,9 +51,17 @@ section {
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-   ul.menu li{
+  li {
     display : inline;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+    a {
+    color: #707976;
+    /* text-shadow: 2px 3px 2px #101010d1; */
+  }
+  a:hover {
+    color: #109e6c;
   }
   div {
       display: flex;
@@ -63,7 +72,7 @@ section {
 </style>
 
 <div>
-    <ul class="menu">
+    <ul>
         <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photographs</a></li> |
         <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
         <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |
@@ -71,7 +80,7 @@ section {
     </ul>
 </div>
 
-<section>
+<section in:fly={{ y: 300, duration: 2000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}
         <Photographs photograph={photograph} />
