@@ -11,6 +11,7 @@ export let painting;
 <article class="art_piece">
   <div>
     <h3>Title: {painting.title}</h3>
+    <h3>Artist/Name: {painting.people[0].displayname}</h3>
     <h3>Dated: {painting.dated}</h3>
     <h3>Division: {painting.division}</h3>
     <h3 class="url_link">{painting.url}</h3>
