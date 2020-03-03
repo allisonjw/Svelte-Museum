@@ -4,6 +4,7 @@
   import Paintings from './Paintings.svelte';
   import Sculptures from './Sculptures.svelte';
   import Jewelry from './Jewelry.svelte';
+  import { fly } from 'svelte/transition';
 
 let photographs = [];
 let paintings = [];
@@ -52,12 +53,15 @@ section {
   }
   li {
     display : inline;
-    font-size: 1.9em;
+    font-size: 1.5em;
     font-weight: 700;
   }
     a {
-    color: #08ce88;
-    text-shadow: 2px 3px 2px #101010d1;
+    color: #707976;
+    /* text-shadow: 2px 3px 2px #101010d1; */
+  }
+  a:hover {
+    color: #109e6c;
   }
   div {
       display: flex;
@@ -76,7 +80,7 @@ section {
     </ul>
 </div>
 
-<section>
+<section in:fly={{ y: 300, duration: 2000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}
         <Photographs photograph={photograph} />

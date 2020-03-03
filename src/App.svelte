@@ -18,22 +18,18 @@
 <style>
 	main {
     margin: auto;
-    overflow: hidden;
-    padding: 1em;
-	}
-
+  }
 	h1 {
-		color: #109e6c;
+    color: #109e6c;
 		text-transform: uppercase;
-		font-size: 6em;
-    text-align: center;
+		font-size: 4.3em;
     text-shadow: 5px 7px 7px #272727;
-    margin: 3%;
+    margin: 1%;
   }
 </style>
 
 <main>
-	<h1>Svelte Gallery</h1>
+	  <h1>Svelte Gallery</h1>
 	<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
-  <Nav />
+    <Nav />
 </main>

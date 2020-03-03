@@ -3,9 +3,6 @@ export let jewelry;
 </script>
 
 <style>
-    .art_piece {
-        background-color: orange;
-    }
     div {
         margin: 0;
     }

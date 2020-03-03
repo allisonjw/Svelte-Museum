@@ -3,9 +3,6 @@ export let photograph
 </script>
 
 <style>
-    .art_piece {
-        background-color: #00ffa6;
-    }
     div {
         margin: 0;
     }

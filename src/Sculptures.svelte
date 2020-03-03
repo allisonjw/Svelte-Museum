@@ -3,9 +3,6 @@ export let sculpture;
 </script>
 
 <style>
-    .art_piece {
-        background-color: yellow;
-    }
     div {
         margin: 0;
     }

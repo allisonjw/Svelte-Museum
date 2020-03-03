@@ -3,9 +3,6 @@ export let painting;
 </script>
 
 <style>
-    .art_piece {
-        background-color: palegoldenrod;
-    }
     div {
         margin: 0;
     }
