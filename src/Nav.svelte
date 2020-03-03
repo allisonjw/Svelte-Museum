@@ -118,7 +118,10 @@ section {
         <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Photographs</a></li> |
         <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Paintings</a></li> | 
         <li><a href="/" on:click|preventDefault={() => (menu = 3)}>Sculptures</a></li> |
-        <li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li>
+        <li><a href="/" on:click|preventDefault={() => (menu = 4)}>Jewelry</a></li> |
+        <li><a href="/" on:click|preventDefault={() => (menu = 5)}>Drawings</a></li> |
+        <li><a href="/" on:click|preventDefault={() => (menu = 6)}>Coins</a></li> 
+
     </ul>
 </div>
 
@@ -139,6 +142,14 @@ section {
     {:else if menu === 4}
     {#each jewelry as jewelry (jewelry.id)}
         <Jewelry jewelry={jewelry} />
+    {/each}
+    {:else if menu === 5}
+    {#each drawings as drawing (drawing.id)}
+        <Drawings drawing={drawing} />
+    {/each}
+    {:else if menu === 6}
+    {#each coins as coin (coin.id)}
+        <Coins coin={coin} />
     {/each}
     {:else}  
     <h1>
