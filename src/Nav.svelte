@@ -6,8 +6,8 @@
   import Sculptures from './Sculptures.svelte';
   import Jewelry from './Jewelry.svelte';
   import Coins from './Coins.svelte';
-  import Drawings from './Drawings.svelte'
-  import { fly } from 'svelte/transition';
+  import Drawings from './Drawings.svelte';
+  import { fade } from 'svelte/transition';
 
 let photographs = [];
 let paintings = [];
@@ -85,7 +85,7 @@ let searchResults = []
 </script>
 
 <style>
-section {
+  section {
     list-style: none;
     display: grid;
     gap: 40px 20px;
@@ -123,7 +123,7 @@ section {
 </div>
 
 <SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
-<section in:fly={{ y: 300, duration: 2000 }}>
+<section transition:fade= {{ y: 125, duration: 1000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}
         <Photographs photograph={photograph} />
