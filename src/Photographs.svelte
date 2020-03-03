@@ -1,10 +1,17 @@
 <script>
-export let photograph
+  export let photograph;
+  import Modal from './Modal.svelte';
+
+  let showModal = false;
 </script>
 
 <style>
     div {
         margin: 0;
+    }
+    .modal_img {
+        height: 100%;
+        width: 100%;
     }
 </style>
 
@@ -16,5 +23,14 @@ export let photograph
     <h3>Division: {photograph.division}</h3>
     <h3 class="url_link">{photograph.url}</h3>
   </div>
+  <button on:click="{() => showModal = true}">
+	See Larger Image
+  </button>
   <img class="art" src={photograph.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={photograph.commentary || ""}>
 </article>
+
+{#if showModal}
+	<Modal on:close="{() => showModal = false}">
+		<img class="modal_img" src={photograph.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={photograph.commentary || ""}>
+	</Modal>
+{/if}
