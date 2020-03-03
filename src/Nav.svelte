@@ -19,12 +19,12 @@ export let menu = 1;
 
 const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
 const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
-const photoEndpoint = `${baseUrl}Photographs&${apiKey}&size=16&page=14&sort=&sortorder=ASC`;
-const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=16&page=1`;
-const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=16&page=9`;
-const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=16&page=4&sort=&sortorder=ASC`;
-const drawingEndpoint = `${baseUrl}Drawings&${apiKey}&size=16&page=1`;
-const coinEndpoint = `${baseUrl}Coins&${apiKey}&size=16&page=2`;
+const photoEndpoint = `${baseUrl}Photographs&${apiKey}&size=24&page=14&sort=&sortorder=ASC`;
+const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=24&page=1`;
+const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=24&page=9`;
+const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=24&page=4&sort=&sortorder=ASC`;
+const drawingEndpoint = `${baseUrl}Drawings&${apiKey}&size=24&page=1`;
+const coinEndpoint = `${baseUrl}Coins&${apiKey}&size=24&page=2`;
 
 
 onMount(async() => {
