@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';	
+  import SearchBar from './SearchBar.svelte';
   import Photographs from './Photographs.svelte';
   import Paintings from './Paintings.svelte';
   import Sculptures from './Sculptures.svelte';
@@ -14,9 +15,9 @@ export let menu = 1;
 
 const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
 const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
-const photoEndpoint = `${baseUrl}Photographs&${apiKey}&size=16&page=8&sort=&sortorder=ASC`;
-const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=16&page=2&sort=&sortorder=ASC`;
-const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=16&page=2&sort=&sortorder=ASC`;
+const photoEndpoint = `${baseUrl}Photographs&${apiKey}&size=16&page=14&sort=&sortorder=ASC`;
+const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=16&page=1`;
+const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=16&page=9`;
 const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=16&page=4&sort=&sortorder=ASC`;
 
 onMount(async() => {
@@ -42,6 +43,24 @@ onMount(async() => {
     let result = await res.json()
     jewelry = result.records
 });
+
+let searchQuery = '';
+
+    // $: filteredArtwork = seachQuery
+		// ? artwork.filter(art => {
+		// 	const title = `${art.title}`;
+		// 	return title.toLowerCase().startsWith(seachQuery.toLowerCase());
+		// })
+    // : artwork;
+    
+    const displayArtsSearch = (searchQuery) => {
+      return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      displayArtsSearch()
+    }
 </script>
 
 <style>
@@ -80,6 +99,7 @@ section {
     </ul>
 </div>
 
+<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
 <section in:fly={{ y: 300, duration: 2000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}
