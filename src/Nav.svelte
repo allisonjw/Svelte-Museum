@@ -51,6 +51,20 @@ onMount(async() => {
     jewelry = result.records
 });
 
+onMount(async() => {
+    const res = await fetch(drawingEndpoint);
+    let result = await res.json()
+    drawings = result.records
+});
+$: console.log('drawings', drawings)
+
+onMount(async() => {
+    const res = await fetch(coinEndpoint);
+    let result = await res.json()
+    coins = result.records
+});
+$: console.log('coins', coins)
+
 let searchQuery = '';
 let searchResults = []
 
