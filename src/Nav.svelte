@@ -70,7 +70,7 @@ onMount(async() => {
     display: grid;
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    height: 606px;
+    height: 626px;
     overflow-y: scroll;
   }
   li {
