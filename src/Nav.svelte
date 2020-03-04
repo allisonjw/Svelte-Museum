@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';	
-  import SearchBar from './SearchBar.svelte';
+//   import SearchBar from './SearchBar.svelte';
   import Photographs from './Photographs.svelte';
   import Paintings from './Paintings.svelte';
   import Sculptures from './Sculptures.svelte';
@@ -20,7 +20,7 @@ export let menu = 1;
 const apiKey = 'apikey=fb6b7390-5a53-11ea-b877-8f943796feb8';
 const baseUrl = 'https://api.harvardartmuseums.org/object?classification=';
 const photoEndpoint = `${baseUrl}Photographs&${apiKey}&size=24&page=14&sort=&sortorder=ASC`;
-const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=24&page=1`;
+const paintingEndpoint = `${baseUrl}Paintings&Century=21&${apiKey}&size=24&page=29`;
 const sculptureEndpoint = `${baseUrl}Sculpture&${apiKey}&size=24&page=9`;
 const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=24&page=4&sort=&sortorder=ASC`;
 const drawingEndpoint = `${baseUrl}Drawings&${apiKey}&size=24&page=1`;
@@ -62,26 +62,6 @@ onMount(async() => {
     let result = await res.json()
     coins = result.records
 });
-
-let searchQuery = '';
-let searchResults = []
-
-    // $: filteredArtwork = seachQuery
-		// ? artwork.filter(art => {
-		// 	const title = `${art.title}`;
-		// 	return title.toLowerCase().startsWith(seachQuery.toLowerCase());
-		// })
-    // : artwork;
-
-    // const displayArtsSearch = (searchQuery) => {
-    //   return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
-    // }
-
-    const handleSubmit = (e, seachQuery) => {
-      e.preventDefault()
-      return photographs.find((artwork) => artwork.title.toLowerCase().includes(searchQuery));
-
-    }
 </script>
 
 <style>
@@ -90,6 +70,8 @@ let searchResults = []
     display: grid;
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 626px;
+    overflow-y: scroll;
   }
   li {
     display : inline;
@@ -98,7 +80,6 @@ let searchResults = []
   }
     a {
     color: #707976;
-    /* text-shadow: 2px 3px 2px #101010d1; */
   }
   a:hover {
     color: #109e6c;
@@ -122,7 +103,7 @@ let searchResults = []
     </ul>
 </div>
 
-<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
+<!-- <SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/> -->
 <section transition:fade= {{ y: 125, duration: 1000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}

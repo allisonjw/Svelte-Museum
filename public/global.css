@@ -41,12 +41,12 @@ body {
 }
 .url_link {
 	overflow: scroll;
-	color: blue;
+	color: rgb(5, 5, 165);
 }
 
 .url_link:hover {
 	text-decoration: underline;
-	color: cornflowerblue;
+	color: #109e6c;
 }
 
 a {
