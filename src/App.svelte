@@ -13,6 +13,9 @@
     text-shadow: 5px 7px 7px #272727;
     margin: 1%;
   }
+  #blockColorblindContent {
+    display: none;
+  }
 </style>
 
 <main>

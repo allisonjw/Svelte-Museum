@@ -8,6 +8,7 @@
 <style>
     h3 {
         margin: 4px;
+        color: #ffffffc2;
     }
     .modal_img {
         height: 100%;
@@ -32,7 +33,7 @@
     <h3>Title: {sculpture.title}</h3>
     <h3>Dated: {sculpture.dated}</h3>
     <h3>Division: {sculpture.division}</h3>
-    <h3 class="url_link">{sculpture.url}</h3>
+    <h4 class="url_link">{sculpture.url}</h4>
   <button on:click="{() => showModal = true}">
 	See Full Size Image
   </button>
