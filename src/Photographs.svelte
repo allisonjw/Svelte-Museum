@@ -12,7 +12,7 @@
         flex-direction: column;
         align-items: normal;
     }
-    h4 {
+    h3 {
         margin: 2px;
     }
     .modal_img {
@@ -20,11 +20,12 @@
         width: 100%;
     }
     button {
-        background-color: grey;
+        background-color: #109e6c;
         color: #333;
         width: 50%;
         border: 1px solid gray;
-        /* margin: auto; */
+        border-radius: 3px;
+        font-size: 1.2em;
     }
     button:hover {
         opacity: 0.8;
@@ -38,11 +39,11 @@
 	See Larger Image
   </button>
   <div>
-    <h4>Title: {photograph.title}</h4>
-    <h4>Artist/Name: {photograph.people[0].displayname}</h4>
-    <h4>Dated: {photograph.dated}</h4>
-    <h4>Division: {photograph.division}</h4>
-    <h4 class="url_link">{photograph.url}</h4>
+    <h3>Title: {photograph.title}</h3>
+    <h3>Artist/Name: {photograph.people[0].displayname}</h3>
+    <h3>Dated: {photograph.dated}</h3>
+    <h3>Division: {photograph.division}</h3>
+    <h3 class="url_link">{photograph.url}</h3>
   </div>
   <img class="art" src={photograph.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={photograph.commentary || ""}>
 </article>
