@@ -8,6 +8,7 @@
 <style>    
     h3 {
         margin: 4px;
+        color: #ffffffc2;
     }
     .modal_img {
         height: 100%;
@@ -32,7 +33,7 @@
     <h3>Artist/Name: {drawing.people[0].displayname}</h3>
     <h3>Dated: {drawing.dated}</h3>
     <h3>Division: {drawing.division}</h3>
-    <h3 class="url_link">{drawing.url}</h3>
+    <h4 class="url_link">{drawing.url}</h4>
   <button on:click="{() => showModal = true}">
 	See Full Size Image
   </button>
