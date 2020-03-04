@@ -28,6 +28,7 @@
 </style>
 
 <article class="art_piece">
+    <h3>Type: Drawing</h3>
     <h3>Title: {drawing.title}</h3>
     <h3>Artist/Name: {drawing.people[0].displayname}</h3>
     <h3>Dated: {drawing.dated}</h3>
