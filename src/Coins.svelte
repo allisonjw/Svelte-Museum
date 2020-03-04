@@ -27,6 +27,7 @@
 </style>
 
 <article class="art_piece">
+    <h3>Type: Coin</h3>
     <h3>Title: {coin.title}</h3>
     <h3>Dated: {coin.dated}</h3>
     <h3>Division: {coin.division}</h3>

@@ -28,6 +28,7 @@
 </style>
 
 <article class="art_piece">
+    <h3>Type: Jewlery</h3>
     <h3>Title: {jewelry.title}</h3>
     <h3>Dated: {jewelry.dated}</h3>
     <h3>Division: {jewelry.division}</h3>

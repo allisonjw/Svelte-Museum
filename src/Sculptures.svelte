@@ -28,6 +28,7 @@
 </style>
 
 <article class="art_piece">
+    <h3>Type: Sculpture</h3>
     <h3>Title: {sculpture.title}</h3>
     <h3>Dated: {sculpture.dated}</h3>
     <h3>Division: {sculpture.division}</h3>

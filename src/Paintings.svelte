@@ -28,6 +28,7 @@
 </style>
 
 <article class="art_piece">
+    <h3>Type: Painting</h3>
     <h3>Title: {painting.title}</h3>
     <h3>Dated: {painting.dated}</h3>
     <h3>Division: {painting.division}</h3>

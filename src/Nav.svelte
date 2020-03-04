@@ -26,7 +26,6 @@ const jewelryEndpoint = `${baseUrl}Jewelry&${apiKey}&size=24&page=4&sort=&sortor
 const drawingEndpoint = `${baseUrl}Drawings&${apiKey}&size=24&page=1`;
 const coinEndpoint = `${baseUrl}Coins&${apiKey}&size=24&page=2`;
 
-
 onMount(async() => {
     const res = await fetch(photoEndpoint);
     let result = await res.json()
@@ -78,7 +77,7 @@ onMount(async() => {
     font-size: 1.5em;
     font-weight: 700;
   }
-    a {
+  a {
     color: #707976;
   }
   a:hover {
