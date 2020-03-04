@@ -11,7 +11,7 @@
         flex-direction: column;
         align-items: normal;
     }
-    h4 {
+    h3 {
         margin: 2px;
     }
     .modal_img {
@@ -19,11 +19,12 @@
         width: 100%;
     }
     button {
-        background-color: grey;
+        background-color: #109e6c;
         color: #333;
         width: 50%;
         border: 1px solid gray;
-        /* margin: auto; */
+        border-radius: 3px;
+        font-size: 1.2em;
     }
     button:hover {
         opacity: 0.8;
@@ -31,8 +32,9 @@
         transition: all .1s ease-in-out;
     }
 </style>
+
 <article class="art_piece">
-<button on:click="{() => showModal = true}">
+  <button on:click="{() => showModal = true}">
 	See Larger Image
   </button>
   <div>
