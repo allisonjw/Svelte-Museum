@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';	
-  import SearchBar from './SearchBar.svelte';
+//   import SearchBar from './SearchBar.svelte';
   import Photographs from './Photographs.svelte';
   import Paintings from './Paintings.svelte';
   import Sculptures from './Sculptures.svelte';
@@ -62,26 +62,6 @@ onMount(async() => {
     let result = await res.json()
     coins = result.records
 });
-
-let searchQuery = '';
-let searchResults = []
-
-    // $: filteredArtwork = seachQuery
-		// ? artwork.filter(art => {
-		// 	const title = `${art.title}`;
-		// 	return title.toLowerCase().startsWith(seachQuery.toLowerCase());
-		// })
-    // : artwork;
-
-    // const displayArtsSearch = (searchQuery) => {
-    //   return artworks.filter((artwork) => artwork.title.toLowerCase().includes(searchQuery));
-    // }
-
-    const handleSubmit = (e, seachQuery) => {
-      e.preventDefault()
-      return photographs.find((artwork) => artwork.title.toLowerCase().includes(searchQuery));
-
-    }
 </script>
 
 <style>
@@ -90,6 +70,8 @@ let searchResults = []
     display: grid;
     gap: 40px 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 606px;
+    overflow-y: scroll;
   }
   li {
     display : inline;
@@ -98,7 +80,6 @@ let searchResults = []
   }
     a {
     color: #707976;
-    /* text-shadow: 2px 3px 2px #101010d1; */
   }
   a:hover {
     color: #109e6c;
@@ -122,7 +103,7 @@ let searchResults = []
     </ul>
 </div>
 
-<SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/>
+<!-- <SearchBar bind:search={searchQuery} handleSubmit={handleSubmit}/> -->
 <section transition:fade= {{ y: 125, duration: 1000 }}>
     {#if menu === 1}
     {#each photographs as photograph (photograph.id)}

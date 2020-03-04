@@ -1,11 +1,6 @@
 <script>
   export let search;
   export let handleSubmit;
-  // export this functions from App
-
-  const resetInput = () => {
-      input = '';
-    }
 </script>
 
 <style>
