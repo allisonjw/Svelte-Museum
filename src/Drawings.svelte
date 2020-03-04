@@ -22,7 +22,7 @@
     }
     button:hover {
         opacity: 0.8;
-        transform: scale(1.1);
+        transform: scale(.95);
         transition: all .1s ease-in-out;
     }
 </style>
@@ -34,7 +34,7 @@
     <h3>Division: {drawing.division}</h3>
     <h3 class="url_link">{drawing.url}</h3>
   <button on:click="{() => showModal = true}">
-	See Larger Image
+	See Full Size Image
   </button>
   <img class="art" src={drawing.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={drawing.commentary || ""}>
 </article>
