@@ -1,7 +1,9 @@
 <script>
 	import { createEventDispatcher, onDestroy } from 'svelte';
+    import { fade } from 'svelte/transition';
 	const dispatch = createEventDispatcher();
-	const close = () => dispatch('close');
+    const close = () => dispatch('close');
+
 	let modal;
 
 	const handle_keydown = e => {
@@ -46,7 +48,7 @@
 	.modal {
 		position: absolute;
 		left: 50%;
-		top: 58%;
+		top: 71%;
 		width: calc(100vw - 4em);
 		max-width: 40em;
 		max-height: calc(100vh - 4em);
@@ -58,21 +60,19 @@
         z-index: 2;
 	}
 	button {
-		display: block;
+        display: block;
+        background-color: #109e6c;
+        width: 30%;
+        font-size: 1.2em;
 	}
 </style>
 
 <svelte:window on:keydown={handle_keydown}/>
 
-<!-- <section> -->
-    <div class="modal-background" on:click={close}></div>
-    <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
-        <slot name="header"></slot>
-        <hr>
-        <slot></slot>
-        <hr>
-
-        <!-- svelte-ignore a11y-autofocus -->
-        <button autofocus on:click={close}>close</button>
-    </div>
-<!-- </section> -->
+<div class="modal-background" on:click={close}></div>
+<div class="modal" bind:this={modal} transition:fade= {{ y: 125, duration: 500 }}>
+    <hr>
+      <slot></slot>
+    <hr>
+    <button on:click={close}>close</button>
+</div>
