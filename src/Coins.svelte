@@ -5,14 +5,8 @@
   let showModal = false;
 </script>
 <style>
-    div {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: normal;
-    }
     h3 {
-        margin: 2px;
+        margin: 4px;
     }
     .modal_img {
         height: 100%;
@@ -21,7 +15,6 @@
     button {
         background-color: #109e6c;
         color: #333;
-        width: 50%;
         border: 1px solid gray;
         border-radius: 3px;
         font-size: 1.2em;
@@ -34,15 +27,13 @@
 </style>
 
 <article class="art_piece">
-  <button on:click="{() => showModal = true}">
-	See Larger Image
-  </button>
-  <div>
     <h3>Title: {coin.title}</h3>
     <h3>Dated: {coin.dated}</h3>
     <h3>Division: {coin.division}</h3>
     <h3 class="url_link">{coin.url}</h3>
-  </div>
+  <button on:click="{() => showModal = true}">
+	See Larger Image
+  </button>
   <img class="art" src={coin.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={coin.commentary || ""}>
 </article>
 {#if showModal}
