@@ -30,7 +30,7 @@
 <article class="art_piece">
     <h3>Type: Photograph</h3>
     <h3>Title: {photograph.title}</h3>
-    <h3>Artist/Name: {photograph.people.displayname}</h3>
+    <h3>Artist/Name: {photograph.people[0].displayname}</h3>
     <h3>Dated: {photograph.dated}</h3>
     <h3>Division: {photograph.division}</h3>
     <h4 class="url_link">{photograph.url}</h4>

@@ -1,11 +1,11 @@
 <script>
-  export let photograph;
+  export let painting;
   import Modal from './Modal.svelte';
 
   let showModal = false;
 </script>
 
-<style>
+<style>    
     h3 {
         margin: 4px;
         color: #ffffffc2;
@@ -27,20 +27,20 @@
         transition: all .1s ease-in-out;
     }
 </style>
+
 <article class="art_piece">
-    <h3>Type: Photograph</h3>
-    <h3>Title: {photograph.title}</h3>
-    <h3>Artist/Name: {photograph.people.displayname}</h3>
-    <h3>Dated: {photograph.dated}</h3>
-    <h3>Division: {photograph.division}</h3>
-    <h4 class="url_link">{photograph.url}</h4>
+    <h3>Type: Painting</h3>
+    <h3>Title: {painting.title}</h3>
+    <h3>Dated: {painting.dated}</h3>
+    <h3>Division: {painting.division}</h3>
+    <h4 class="url_link">{painting.url}</h4>
   <button on:click="{() => showModal = true}">
 	See Full Size Image
   </button>
-  <img class="art" src={photograph.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={photograph.commentary || ""}>
+  <img class="art" src={painting.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={painting.commentary || ""}>
 </article>
 {#if showModal}
 	<Modal on:close="{() => showModal = false}">
-		<img class="modal_img" src={photograph.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={photograph.commentary || ""}>
+		<img class="modal_img" src={painting.primaryimageurl || "https://homestaymatch.com/images/no-image-available.png"} alt={painting.commentary || ""}>
 	</Modal>
 {/if}
